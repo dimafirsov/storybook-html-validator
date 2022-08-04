@@ -36,12 +36,6 @@ export const withRoundTrip: DecoratorFunction = (storyFn) => {
         warning: [],
       });
     },
-    [EVENTS.RUN]: () => {
-      emit(EVENTS.RESULT, {
-        danger: [],
-        warning: [],
-      });
-    },
     [EVENTS.CLEAR]: () => {
       emit(EVENTS.RESULT, {
         danger: [],

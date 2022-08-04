@@ -32,8 +32,8 @@ const run = async (storyId: string) => {
         method: 'POST',
         headers: { 'Content-Type': 'text/html; charset=utf-8'},
         body: `
-          !DOCTYPE html
-          <html>
+          <!DOCTYPE html>
+          <html lang="en">
             <head>
               <title>Title</title>
             </head>
@@ -44,11 +44,11 @@ const run = async (storyId: string) => {
 
       const result = response.reduce((acc: any, item: Response) => {
         if (item.type === 'error') {
-          acc.danger.push(item)
+          acc.danger.push({title: item.message})
         }
 
         if (item.type === 'info') {
-          acc.warning.push(item)
+          acc.warning.push({title: item.message})
         }
 
         return acc
@@ -58,6 +58,7 @@ const run = async (storyId: string) => {
         channel.emit(EVENTS.RESULT, {...result});
       } else {
         active = false;
+        channel.emit(EVENTS.CLEAR);
         run(activeStoryId);
       }
     }

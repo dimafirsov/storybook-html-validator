@@ -15,9 +15,7 @@ type Results = {
 
 interface PanelContentProps {
   results: Results;
-  fetchData: () => void;
-  clearData: () => void;
-  runMe: (arg: any) => void;
+  isLoading: boolean,
 }
 
 /**
@@ -26,9 +24,7 @@ interface PanelContentProps {
  */
 export const PanelContent: React.FC<PanelContentProps> = ({
   results,
-  fetchData,
-  clearData,
-  runMe,
+  isLoading,
 }) => {
   const { storyId } = useStorybookState();
 
@@ -44,40 +40,20 @@ export const PanelContent: React.FC<PanelContentProps> = ({
       >
         <Placeholder>
           <Fragment>
-            Addons can gather details about how a story is rendered. This is panel
-            uses a tab pattern. Click the button below to fetch data for the other
-            two tabs.
-          </Fragment>
-          <Fragment>
-            <RequestDataButton
-              secondary
-              small
-              onClick={fetchData}
-              style={{ marginRight: 16 }}
-            >
-              Request data
-            </RequestDataButton>
-  
-            <RequestDataButton outline small onClick={clearData} style={{ marginRight: 16 }}>
-              Clear data
-            </RequestDataButton>
-  
-            <RequestDataButton outline small onClick={() => runMe(storyId)}>
-              RUN
-            </RequestDataButton>
+            It just works.
           </Fragment>
         </Placeholder>
       </div>
       <div
         id="danger"
-        title={`${results.danger?.length} Danger`}
+        title={isLoading ? 'Validating...' : `${results.danger?.length} Danger`}
         color={convert(themes.normal).color.negative}
       >
         <List items={results.danger} />
       </div>
       <div
         id="warning"
-        title={`${results.warning?.length} Warning`}
+        title={isLoading ? 'Validating...' : `${results.warning?.length} Warning`}
         color={convert(themes.normal).color.warning}
       >
         <List items={results.warning} />
