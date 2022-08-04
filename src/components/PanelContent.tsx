@@ -18,10 +18,6 @@ interface PanelContentProps {
   isLoading: boolean,
 }
 
-/**
- * Checkout https://github.com/storybookjs/storybook/blob/next/addons/jest/src/components/Panel.tsx
- * for a real world example
- */
 export const PanelContent: React.FC<PanelContentProps> = ({
   results,
   isLoading,
