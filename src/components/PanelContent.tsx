@@ -40,10 +40,17 @@ export const PanelContent: React.FC<PanelContentProps> = ({
           <Fragment>
             It just works.
           </Fragment>
+          <>
+            <Button
+              secondary
+              small
+              onClick={run}
+              style={{ marginTop: 36 }}
+            >
+              Click to validate
+            </Button>
+          </>
         </Placeholder>
-        <Button type="button" onClick={run}>
-          Validate
-        </Button>
       </div>
       <div
         id="danger"
