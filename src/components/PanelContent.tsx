@@ -16,9 +16,11 @@ type Results = {
 interface PanelContentProps {
   results: Results;
   isLoading: boolean,
+  run: (arg: any) => void
 }
 
 export const PanelContent: React.FC<PanelContentProps> = ({
+  run,
   results,
   isLoading,
 }) => {
@@ -39,6 +41,9 @@ export const PanelContent: React.FC<PanelContentProps> = ({
             It just works.
           </Fragment>
         </Placeholder>
+        <Button type="button" onClick={run}>
+          Validate
+        </Button>
       </div>
       <div
         id="danger"

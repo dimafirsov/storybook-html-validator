@@ -38,6 +38,7 @@ export const Panel: React.FC<PanelProps> = (props) => {
       <PanelContent
         results={results}
         isLoading={loading}
+        run={() => emit(EVENTS.RUN, storyId)}
       />
     </AddonPanel>
   );
