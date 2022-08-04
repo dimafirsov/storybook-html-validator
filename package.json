@@ -1,5 +1,6 @@
 {
-  "name": "dtorybook-addon-html-validator",
+  "name": "storybook-addon-html-validator",
+  "author": "Dima Firsov <dmitriy.firsov@gmail.com>",
   "version": "0.0.0",
   "description": "Validates HTML of the Story",
   "keywords": [
@@ -9,7 +10,6 @@
     "type": "git",
     "url": "https://github.com/dimafirsov/storybook-html-validator"
   },
-  "author": "Dima Firsov <dmitriy.firsov@gmail.com>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
