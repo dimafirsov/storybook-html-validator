@@ -88,7 +88,7 @@ interface ListProps {
 
 export const List: React.FC<ListProps> = ({ items }) => (
   <ListWrapper>
-    {items.map((item, idx) => (
+    {items?.map((item, idx) => (
       <ListItem key={idx} item={item}></ListItem>
     ))}
   </ListWrapper>
