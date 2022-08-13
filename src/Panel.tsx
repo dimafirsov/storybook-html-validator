@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAddonState, useChannel, useStorybookState } from "@storybook/api";
 import { AddonPanel } from "@storybook/components";
 import { ADDON_ID, EVENTS } from "./constants";
@@ -17,8 +17,6 @@ export const Panel: React.FC<PanelProps> = (props) => {
     warning: [],
   });
 
-  const ref = useRef(true)
-  
   useEffect(() => {
     emit(EVENTS.CLEAR)
     setLoading(true)
@@ -38,7 +36,12 @@ export const Panel: React.FC<PanelProps> = (props) => {
       <PanelContent
         results={results}
         isLoading={loading}
-        run={() => emit(EVENTS.RUN, storyId)}
+        run={() => {
+          setLoading(true)
+          emit(EVENTS.RUN, storyId)
+          setTimeout(() => setLoading(false), 500)
+          
+        }}
       />
     </AddonPanel>
   );
