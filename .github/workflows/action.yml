@@ -9,8 +9,8 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: '# Message with markdown.\nThis is the message that will be displayed on users' first issue.'
         pr-message: 'Message that will be displayed on users' first pr. Look, a `code block` for markdown.'
-      env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run:
-        `echo $NPM_TOKEN`
+      # env:
+      #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # run:
+      #   `echo $NPM_TOKEN`
