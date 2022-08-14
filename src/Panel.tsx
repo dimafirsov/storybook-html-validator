@@ -40,7 +40,6 @@ export const Panel: React.FC<PanelProps> = (props) => {
           setLoading(true)
           emit(EVENTS.RUN, storyId)
           setTimeout(() => setLoading(false), 500)
-          
         }}
       />
     </AddonPanel>
