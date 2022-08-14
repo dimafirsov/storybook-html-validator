@@ -25,4 +25,5 @@ jobs:
         run: |
           echo '>>>>>'
           echo $NPM_TOKEN
+          echo $GITHUB_TOKEN
           echo '>>>>>'
