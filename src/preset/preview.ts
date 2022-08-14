@@ -12,7 +12,11 @@ type Response = {
   message: string,
 }
 
-const { document, window: globalWindow } = global;
+export type Result = { danger: ResultContent, warning: ResultContent }
+
+type ResultContent = Array<{ title: string, description: string }>
+
+const { document } = global;
 
 const channel = addons.getChannel();
 let active = false;
@@ -42,13 +46,13 @@ const run = async (storyId: string) => {
             </body>
           </html>`})).json()).messages;
 
-      const result = response.reduce((acc: any, item: Response) => {
+      const result = response.reduce((acc: Result, item: Response) => {
         if (item.type === 'error') {
-          acc.danger.push({title: item.message})
+          acc.danger.push({title: item.message, description: ''})
         }
 
         if (item.type === 'info') {
-          acc.warning.push({title: item.message})
+          acc.warning.push({title: item.message, description: ''})
         }
 
         return acc
