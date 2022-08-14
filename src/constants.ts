@@ -7,4 +7,6 @@ export const EVENTS = {
   CLEAR: `${ADDON_ID}/clear`,
   ERROR: `${ADDON_ID}/error`,
   RUN: `${ADDON_ID}/run`,
+  DONE: `${ADDON_ID}/done`,
+  START_LOADING: `${ADDON_ID}/start_loading`,
 };
