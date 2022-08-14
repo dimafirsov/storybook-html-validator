@@ -1,7 +1,7 @@
 {
   "name": "storybook-addon-html-validator",
   "author": "Dima Firsov <dmitriy.firsov@gmail.com>",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Validates HTML of the Story",
   "keywords": [
     "HTML",
