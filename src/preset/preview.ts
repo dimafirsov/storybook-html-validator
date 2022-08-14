@@ -70,6 +70,7 @@ const run = async (storyId: string) => {
     channel.emit(EVENTS.ERROR, error);
   } finally {
     active = false;
+    channel.emit(EVENTS.DONE);
   }
 };
 

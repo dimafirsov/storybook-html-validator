@@ -19,16 +19,14 @@ export const Panel: React.FC<PanelProps> = (props) => {
 
   const emit = useChannel({
     [EVENTS.RESULT]: (newResults) => setState(newResults),
+    [EVENTS.START_LOADING]: () => setLoading(true),
+    [EVENTS.DONE]: () => setLoading(false)
   });
 
   useEffect(() => {
     emit(EVENTS.CLEAR)
-    setLoading(true)
-
-    setTimeout(() => {
-      emit(EVENTS.RUN, storyId)
-      setTimeout(() => setLoading(false), 500)
-    }, 1000)
+    emit(EVENTS.START_LOADING)
+    setTimeout(() => emit(EVENTS.RUN, storyId), 200)
   }, [storyId, emit])
 
   return (
@@ -39,7 +37,6 @@ export const Panel: React.FC<PanelProps> = (props) => {
         run={() => {
           setLoading(true)
           emit(EVENTS.RUN, storyId)
-          setTimeout(() => setLoading(false), 500)
         }}
       />
     </AddonPanel>
