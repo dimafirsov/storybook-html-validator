@@ -1,3 +1,27 @@
+# v0.0.8 (Sun Aug 14 2022)
+
+#### 🐛 Bug Fix
+
+- Migrate to event based 2 [#11](https://github.com/dimafirsov/storybook-html-validator/pull/11) ([@dimafirsov](https://github.com/dimafirsov))
+
+#### 🏎 Performance
+
+- fixing readme [#10](https://github.com/dimafirsov/storybook-html-validator/pull/10) ([@dimafirsov](https://github.com/dimafirsov))
+- no more releases from develop [#10](https://github.com/dimafirsov/storybook-html-validator/pull/10) ([@dimafirsov](https://github.com/dimafirsov))
+- Merge branch 'main' into develop [#10](https://github.com/dimafirsov/storybook-html-validator/pull/10) ([@dimafirsov](https://github.com/dimafirsov))
+- bumping the patch version [#10](https://github.com/dimafirsov/storybook-html-validator/pull/10) ([@dimafirsov](https://github.com/dimafirsov))
+
+#### ⚠️ Pushed to `main`
+
+- Release v0.0.9 ([@dimafirsov](https://github.com/dimafirsov))
+- Release v8.0.0 ([@dimafirsov](https://github.com/dimafirsov))
+
+#### Authors: 1
+
+- Dmytro Firsov ([@dimafirsov](https://github.com/dimafirsov))
+
+---
+
 # v0.0.7 (Sun Aug 14 2022)
 
 #### 🐛 Bug Fix
