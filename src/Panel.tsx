@@ -17,6 +17,10 @@ export const Panel: React.FC<PanelProps> = (props) => {
     warning: [],
   });
 
+  const emit = useChannel({
+    [EVENTS.RESULT]: (newResults) => setState(newResults),
+  });
+
   useEffect(() => {
     emit(EVENTS.CLEAR)
     setLoading(true)
@@ -25,16 +29,12 @@ export const Panel: React.FC<PanelProps> = (props) => {
       emit(EVENTS.RUN, storyId)
       setTimeout(() => setLoading(false), 500)
     }, 1000)
-  }, [storyId])
-
-  const emit = useChannel({
-    [EVENTS.RESULT]: (newResults) => setState(newResults),
-  });
+  }, [storyId, emit])
 
   return (
     <AddonPanel {...props}>
       <PanelContent
-        results={results}
+        result={results}
         isLoading={loading}
         run={() => {
           setLoading(true)
