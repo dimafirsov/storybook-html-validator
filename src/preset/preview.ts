@@ -14,7 +14,7 @@ type Response = {
 
 export type Result = { danger: ResultContent, warning: ResultContent }
 
-type ResultContent = Array<{ title: string, description: string }>
+export type ResultContent = Array<{ title: string, description: string }>
 
 const { document } = global;
 

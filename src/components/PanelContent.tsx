@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled, themes, convert } from "@storybook/theming";
 import { TabsState, Placeholder, Button } from "@storybook/components";
 import { List } from "./List";
@@ -21,6 +21,36 @@ export const PanelContent: React.FC<PanelContentProps> = ({
   isLoading,
 }) => {
   const { storyId } = useStorybookState();
+
+  const [ newDangers, setNewDangers ] = useState<number>(0)
+  const [ newWarnings, setNewWarnings ] = useState<number>(0)
+  const [ oldResults, setOldResults ] = useState<Result>({
+    danger: [],
+    warning: [],
+  })
+
+  useEffect(() => {
+    const newDangersTitles = result.danger.map(r => r.title).join()
+    const newWarningsittles = result.warning.map(r => r.title).join()
+
+    const numberOfNewDangers = getNewDangersAmount(newDangersTitles, oldResults, 'danger')
+    const numberOfNewWarnings = getNewDangersAmount(newWarningsittles, oldResults, 'warning')
+
+    setNewDangers(numberOfNewDangers)
+    setNewWarnings(numberOfNewWarnings)
+
+    setOldResults(result)
+  }, [result, oldResults])
+
+  function getNewDangersAmount(newItems: string, oldItems: Result, type: 'danger' | 'warning') {
+    const resultArray = oldItems[type].reduce((acc, item) => {
+      acc = acc.replace(item.title, '')
+
+      return acc
+    }, newItems)
+
+    return resultArray.split(',').filter(item => item).length
+  }
 
   return (
     <TabsState
@@ -49,14 +79,22 @@ export const PanelContent: React.FC<PanelContentProps> = ({
       </div>
       <div
         id="danger"
-        title={isLoading ? 'Validating...' : `${result.danger?.length} Danger`}
+        title={
+          isLoading
+            ? 'Validating...'
+            : `${result.danger?.length} Danger ${newDangers ? `(${newDangers} new)` : ''}`
+        }
         color={convert(themes.normal).color.negative}
       >
         <List items={result.danger} />
       </div>
       <div
         id="warning"
-        title={isLoading ? 'Validating...' : `${result.warning?.length} Warning`}
+        title={
+          isLoading
+            ? 'Validating...'
+            : `${result.warning?.length} Warning ${newWarnings  ? `(${newWarnings} new)` : ''}`
+        }
         color={convert(themes.normal).color.warning}
       >
         <List items={result.warning} />
