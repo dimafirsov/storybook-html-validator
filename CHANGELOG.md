@@ -1,3 +1,15 @@
+# v0.0.11 (Mon Aug 22 2022)
+
+#### 🐛 Bug Fix
+
+- new errors and warnings identification [#13](https://github.com/dimafirsov/storybook-html-validator/pull/13) ([@dimafirsov](https://github.com/dimafirsov))
+
+#### Authors: 1
+
+- Dmytro Firsov ([@dimafirsov](https://github.com/dimafirsov))
+
+---
+
 # v0.0.8 (Sun Aug 14 2022)
 
 #### 🐛 Bug Fix
