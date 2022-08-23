@@ -1,3 +1,15 @@
+# v0.0.12 (Tue Aug 23 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix for the issue with the new errors ([@dimafirsov](https://github.com/dimafirsov))
+
+#### Authors: 1
+
+- Dmytro Firsov ([@dimafirsov](https://github.com/dimafirsov))
+
+---
+
 # v0.0.11 (Mon Aug 22 2022)
 
 #### 🐛 Bug Fix
