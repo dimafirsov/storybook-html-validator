@@ -29,9 +29,9 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
         <div>
           <dt></dt>
         </div>
-        {/* <div>
+        <div>
           <dt></dt>
-        </div> */}
+        </div>
         <dd></dd>
       </div>
     </dl>

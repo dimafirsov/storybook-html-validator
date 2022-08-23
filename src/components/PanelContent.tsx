@@ -36,11 +36,14 @@ export const PanelContent: React.FC<PanelContentProps> = ({
     const numberOfNewDangers = getNewDangersAmount(newDangersTitles, oldResults, 'danger')
     const numberOfNewWarnings = getNewDangersAmount(newWarningsittles, oldResults, 'warning')
 
+    console.log(numberOfNewDangers);
+    
+
     setNewDangers(numberOfNewDangers)
     setNewWarnings(numberOfNewWarnings)
 
     setOldResults(result)
-  }, [result, oldResults])
+  }, [result])
 
   function getNewDangersAmount(newItems: string, oldItems: Result, type: 'danger' | 'warning') {
     const resultArray = oldItems[type].reduce((acc, item) => {

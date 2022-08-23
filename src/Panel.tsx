@@ -26,7 +26,7 @@ export const Panel: React.FC<PanelProps> = (props) => {
   useEffect(() => {
     emit(EVENTS.CLEAR)
     emit(EVENTS.START_LOADING)
-    setTimeout(() => emit(EVENTS.RUN, storyId), 300)
+    setTimeout(() => emit(EVENTS.RUN, storyId), 500)
   }, [storyId, emit])
 
   return (
