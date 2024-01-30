@@ -36,9 +36,6 @@ export const PanelContent: React.FC<PanelContentProps> = ({
     const numberOfNewDangers = getNewDangersAmount(newDangersTitles, oldResults, 'danger')
     const numberOfNewWarnings = getNewDangersAmount(newWarningsittles, oldResults, 'warning')
 
-    console.log(numberOfNewDangers);
-    
-
     setNewDangers(numberOfNewDangers)
     setNewWarnings(numberOfNewWarnings)
 
