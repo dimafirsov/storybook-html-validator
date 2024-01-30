@@ -1,3 +1,15 @@
+# v0.0.13 (Tue Jan 30 2024)
+
+#### ⚠️ Pushed to `main`
+
+- removing console log ([@dimafirsov](https://github.com/dimafirsov))
+
+#### Authors: 1
+
+- Dima Firsov ([@dimafirsov](https://github.com/dimafirsov))
+
+---
+
 # v0.0.12 (Tue Aug 23 2022)
 
 #### ⚠️ Pushed to `main`
